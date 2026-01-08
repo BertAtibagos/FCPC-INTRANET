@@ -1,49 +1,28 @@
 import { createRoot } from "react-dom/client"
+import { StrictMode } from "react"
+import SearchBar from "./searchbar.jsx"
 
 const Header = () => {
-    return <div class="mx-8 my-4" >FCPC INTRANET</div>
-}
-
-const FilterButtons = (props) => {
-    const { label } = props;
-    return <button class="bg-blue-600 rounded-xl px-4 py-1 mx-2 text-white hover:bg-blue-800 text-sm">{ label }</button>
-}
-
-const FilterRow = (props) => {
-    const { children } = props;
-    return(
-        <div class="flex justify-center">
-            { children }
-        </div>
-    )
-}
-
-const SearchBar = (props) => {
-    const { children } = props;
-    return(
-        <div class="flex flex-col">
-            <div class="flex justify-center my-5">
-                <input class="bg-blue-200 rounded-xl px-4 py-2 w-96" placeholder="Search"/>
-            </div>
-            { children }
-        </div>
-    )
+    return <div className="mx-8 my-4" >FCPC INTRANET</div>
 }
 
 export default function App(){
     return(
         <>
-        <Header/>
-        <SearchBar>
-            <FilterRow>
-                <FilterButtons label="Name"/>
-                <FilterButtons label="Date"/>
-                <FilterButtons label="Type"/>
-                <FilterButtons label="Size"/>
-            </FilterRow>
-        </SearchBar>
+            <Header/>
+            <SearchBar/>
         </>
     )
 }
 
-createRoot(document.getElementById('root')).render(<App/>); 
+const container = document.getElementById('root');
+
+if (!container._root) {
+    container._root = createRoot(container);
+}
+
+container._root.render(
+    <StrictMode>
+        <App/>
+    </StrictMode>
+); 
