@@ -9,9 +9,9 @@ library.add(fas, far, fab)
 const FilterButtons = (props) => {
     const { label, children } = props;
     return(
-        <button className="bg-blue-600 rounded-xl px-4 py-1 mx-2 text-white hover:bg-blue-800 text-sm relative">
+        <button className="bg-blue-600 rounded-xl px-4 py-1 mx-2 text-white hover:bg-blue-800 text-sm relative w-24 flex justify-center items-center">
         { children }
-        { label }
+        <p className="mx-3">{ label }</p>
         </button>
     )
 }
@@ -28,7 +28,7 @@ const FilterRow = (props) => {
 const SearchBar = (props) => {
     const { children } = props;
     return(
-        <div className="flex flex-col">
+        <div className="flex flex-col my-5">
             <div className="flex justify-center my-5">
                 <div className="relative w-96">
                     <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-600 pointer-events-none">
