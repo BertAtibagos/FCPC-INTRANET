@@ -10,5 +10,5 @@ const SideMenu = (props) => {
 }
 
 export default function SideMenuComponent(){
-    return <SideMenu classname="p-5"/>;
+    return <SideMenu classname="row-span-2 p-10"/>;
 }

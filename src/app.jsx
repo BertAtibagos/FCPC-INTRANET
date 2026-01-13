@@ -5,10 +5,10 @@ import MenuPanel from "./components/menupanel.jsx"
 
 export default function App(){
     return (
-        <>
+        <div className="grid grid-flow-col grid-cols-[20%_80%] min-h-screen bg-gray-100">
             <SideMenu/>
             <MenuPanel/>
-        </>
+        </div>
     )
 }
 

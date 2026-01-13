@@ -7,7 +7,7 @@ const DirectoryLabel = (props) => {
 
 export default function MenuPanel(){
     return(
-        <div>
+        <div className="rounded-3xl bg-white p-10 mt-30 mr-5">
             <SearchBar/>
             <DirectoryLabel 
                     directory="Main Folder" 
