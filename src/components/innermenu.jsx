@@ -18,15 +18,28 @@ const FileRow = (props) => {
     );
 }
 
+async function fetchData(){
+    try{
+        const response = await fetch(`/api/data`);
+
+        const data = await response.json();
+        console.log(data);
+
+    }catch(error){
+        console.error('Error fetching data:', error);
+    }
+}
+fetchData();
+
 export default function InnerMenu(){
     return(
         <>
-            <FileRow name="Document1.txt" dateTime="2024-06-01 10:00 AM" owner="Alice" location="Folder A">
-                <FontAwesomeIcon icon="fa-solid fa-file" />
-            </FileRow><FileRow name="Document2.txt" dateTime="2024-06-01 10:00 AM" owner="Alice" location="Folder A">
-                <FontAwesomeIcon icon="fa-solid fa-file" />
-            </FileRow>
-            <FileRow name="Document3.txt" dateTime="2024-06-01 10:00 AM" owner="Alice" location="Folder A">
+            <FileRow 
+                    name="Document1.txt" 
+                    dateTime="2024-06-01 10:00 AM" 
+                    owner="Alice" 
+                    location="Folder A"
+            >
                 <FontAwesomeIcon icon="fa-solid fa-file" />
             </FileRow>
         </>
