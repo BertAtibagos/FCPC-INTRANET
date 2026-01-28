@@ -10,7 +10,7 @@ library.add(fas, far, fab)
 const FileRow = (props) => {
     const { children,name,dateTime,owner,location } = props;
     return(
-        <tr className="border-collapse border-t border-b border-gray-300 hover:bg-gray-100 cursor-pointer">
+        <tr className="border-collapse border-t border-b border-gray-300 hover:bg-gray-100 cursor-pointer" onClick={ () => console.log('You clicked', name) }>
             <td className="p-3">{ children } { name }</td>
             <td>{ dateTime }</td>
             <td>{ owner }</td>
@@ -30,7 +30,6 @@ export default function InnerMenu(){
                 const response = await fetch(`/api/data`);
 
                 const data = await response.json();
-                console.log(data);
 
                 if(data.success){
                     setData(data.data);
