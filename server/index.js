@@ -25,7 +25,7 @@ app.get('/api/health', (req, res) => {
 
 app.get('/api/data', async (req, res) => {
     try {
-        const [rows] = await pool.query('SELECT schltadi_id, schltadi_mode, schltadi_type FROM schooltadi WHERE `schltadi_id` = 65');
+        const [rows] = await pool.query('SELECT schltadi_id, schltadi_mode, schltadi_type, schlprof_id FROM schooltadi LIMIT 20');
         
         res.json({
             success: true,
