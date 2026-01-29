@@ -99,32 +99,7 @@ app.get('/api/data', async (req, res) => {
 //     }
 // });
 
-// app.delete('/api/files/:id', async (req, res) => {
-//     try {
-//         const { id } = req.params;
-        
-//         const [result] = await pool.query('DELETE FROM files WHERE id = ?', [id]);
-        
-//         if (result.affectedRows === 0) {
-//             return res.status(404).json({
-//                 success: false,
-//                 message: 'File not found'
-//             });
-//         }
-        
-//         res.json({
-//             success: true,
-//             message: 'File deleted successfully'
-//         });
-//     } catch (error) {
-//         console.error('Error deleting file:', error);
-//         res.status(500).json({
-//             success: false,
-//             message: 'Failed to delete file',
-//             error: error.message
-//         });
-//     }
-// });
+
 
 
 app.listen(PORT, async () => {
